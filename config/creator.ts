@@ -21,7 +21,7 @@ export const creator: CreatorConfig = {
   githubUrl: "https://github.com/yiz1118",
   whatsappDisplay: "+60 11-5857 6386",
   whatsappUrl: "https://wa.me/601158576386",
-  portfolioUrl: null,
+  portfolioUrl: "https://alson-portfolio-nine.vercel.app/",
 };
 
 export const conceptProject = {

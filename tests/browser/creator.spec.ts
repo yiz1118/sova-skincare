@@ -2,7 +2,8 @@ import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { creator, creatorContactLinks, conceptProject } from "../../config/creator";
 
-test("creator credit is present on every page without a placeholder portfolio link", async ({ page }) => {
+test("creator credit and live portfolio link are present on every page", async ({ page }) => {
+  expect(creator.portfolioUrl).toBeTruthy();
   for (const route of ["/", "/shop", "/products/soft-reset-gel-cleanser", "/routine", "/ingredients", "/philosophy", "/about", "/cart"]) {
     await page.goto(route);
     const section = page.locator(".creator-layer");
@@ -11,9 +12,24 @@ test("creator credit is present on every page without a placeholder portfolio li
     await expect(section.getByText(creator.title, { exact: true })).toBeVisible();
     await expect(section.getByText(creator.location, { exact: true })).toBeVisible();
     await expect(section.getByText(creator.availability, { exact: true })).toBeVisible();
-    await expect(section.getByRole("link", { name: /View Portfolio/ })).toHaveCount(0);
+    const portfolio = section.getByRole("link", { name: "View Portfolio" });
+    await expect(portfolio).toHaveAttribute("href", creator.portfolioUrl!);
+    await expect(portfolio).toHaveAttribute("target", "_blank");
+    await expect(portfolio).toHaveAttribute("rel", "noopener noreferrer");
+    await expect(portfolio.locator("svg")).toHaveAttribute("aria-hidden", "true");
+    await expect(portfolio.locator("svg")).toHaveAttribute("stroke", "currentColor");
     expect(await section.locator('a[href="#"],a[href=""],a[href^="javascript:"]').count()).toBe(0);
   }
+});
+
+test("View Portfolio opens the configured site from the concept footer", async ({ page }) => {
+  await page.goto("/");
+  const [portfolioPage] = await Promise.all([
+    page.context().waitForEvent("page"),
+    page.locator(".creator-layer").getByRole("link", { name: "View Portfolio" }).click(),
+  ]);
+  await portfolioPage.waitForURL(creator.portfolioUrl!);
+  await portfolioPage.close();
 });
 
 for (const width of [375, 390, 430, 768, 1024, 1440]) {
@@ -30,7 +46,7 @@ for (const width of [375, 390, 430, 768, 1024, 1440]) {
     await page.keyboard.press("Tab");
     await expect(choices.getByRole("link", { name: /WhatsApp/ })).toBeFocused();
     const contacts = creatorContactLinks();
-    for (const [event, href] of [["creator_whatsapp", contacts.whatsapp], ["creator_email", contacts.email], ["creator_linkedin", creator.linkedinUrl], ["creator_github", creator.githubUrl]]) {
+    for (const [event, href] of [["creator_whatsapp", contacts.whatsapp], ["creator_email", contacts.email], ["creator_linkedin", creator.linkedinUrl], ["creator_github", creator.githubUrl], ["creator_portfolio", creator.portfolioUrl!]]) {
       const link = section.locator(`[data-analytics-event="${event}"]`);
       await expect(link).toHaveAttribute("href", href);
       const box = await link.boundingBox();

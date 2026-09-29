@@ -56,7 +56,7 @@ Safari and physical iPhone testing remain unverified. Playwright WebKit could no
 
 The shared footer now includes an independent concept label, creator credit, role, location, freelance availability, and a distinct project enquiry CTA. The section uses SOVA's existing fonts and olive/cream footer palette. The SOVA brand links, main navigation, shopping content, and store interactions are preserved.
 
-`config/creator.ts` is the single source for creator information. It builds correctly encoded WhatsApp and email links using `conceptProject.name`. “Start a Project” opens a native details disclosure with both contact methods. LinkedIn and GitHub use labelled external links with `target="_blank"` and `rel="noopener noreferrer"`. `portfolioUrl` remains `null`, so no portfolio link or placeholder is rendered. A server-rendering test confirms the portfolio CTA appears after a URL is configured. All six prospective analytics actions have `data-analytics-event` identifiers; no analytics package was added.
+`config/creator.ts` is the single source for creator information. It builds correctly encoded WhatsApp and email links using `conceptProject.name`. “Start a Project” opens a native details disclosure with both contact methods. LinkedIn and GitHub use labelled external links with `target="_blank"` and `rel="noopener noreferrer"`. The portfolio URL was originally left unset; it is now configured as `https://alson-portfolio-nine.vercel.app/`, so the existing “View Portfolio” link appears. A server-rendering test confirms the CTA follows the configured URL. All six prospective analytics actions have `data-analytics-event` identifiers; no analytics package was added.
 
 | Check | Result |
 |---|---|
@@ -64,7 +64,7 @@ The shared footer now includes an independent concept label, creator credit, rol
 | `npm run typecheck` | Passed |
 | `npm test` | Passed: 5 tests, including contact URL encoding and conditional portfolio rendering |
 | `npm run build` | Passed: production pages generated |
-| `npm run test:browser` | Passed: 24 tests |
+| `npm run test:browser` | Passed: 25 tests, including the live portfolio link and click-through |
 | Creator browser checks | Credit on all eight page types; contact choices, hrefs, external-link attributes, keyboard focus, 44 px contact targets, and no overflow at 375, 390, 430, 768, 1024, and 1440 px |
 | Automated accessibility | No WCAG 2 A/AA or 2.1 A/AA findings in the open footer at the six requested widths; the existing eight-page scan also passed |
 | Additional browser coverage | Edge and Android-emulated Chromium passed contact disclosure, SVG, target-height, and overflow checks at all six widths |

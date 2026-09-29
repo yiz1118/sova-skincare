@@ -44,6 +44,6 @@ See [CASE-STUDY.md](CASE-STUDY.md), [ASSET-MANIFEST.md](ASSET-MANIFEST.md), and 
 
 The creator credit appears in the shared footer on every page, below the SOVA brand links. “Start a Project” opens a native, keyboard-accessible disclosure with WhatsApp and email choices. LinkedIn and GitHub are visible professional profile links. These real contact options are separate from the fictional store's product, bag, checkout, and newsletter interactions.
 
-To enable the future portfolio CTA, replace `portfolioUrl: null` in `config/creator.ts` with the full public URL, then rebuild and restart the app. “View Portfolio” will appear automatically; no component change is needed. Until then, the link is completely absent.
+The live portfolio CTA reads `portfolioUrl` from `config/creator.ts`. To change its destination later, update that URL, then rebuild and restart the app. “View Portfolio” appears automatically whenever a URL is configured; no component change is needed.
 
 Future analytics can use the `data-analytics-event` attributes: `creator_start_project`, `creator_email`, `creator_whatsapp`, `creator_linkedin`, `creator_github`, and `creator_portfolio`. The section's `data-project` attribute identifies SOVA. No analytics package or tracking service is installed by this integration.
