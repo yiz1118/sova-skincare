@@ -1,0 +1,17 @@
+{
+  "scope": "SOVA source, excluding dependencies, generated files, and evidence artifacts",
+  "unicodeSymbols": [],
+  "lucideImports": [
+    "components\\icons.tsx"
+  ],
+  "cssContent": [
+    {
+      "file": "app\\globals.css",
+      "value": "\"\""
+    },
+    {
+      "file": "app\\globals.css",
+      "value": "\"\""
+    }
+  ]
+}

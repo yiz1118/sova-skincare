@@ -1,0 +1,3 @@
+import type { Metadata } from "next"; import { ShopClient } from "@/components/shop-client";
+export const metadata:Metadata={title:"Shop the Collection",description:"Explore six SOVA concept skincare essentials."};
+export default async function Shop({searchParams}:{searchParams:Promise<{category?:string;sort?:string}>}){const params=await searchParams;return <main id="main" className="inner-page shop-page"><div className="page-hero"><span className="eyebrow">SOVA / The collection</span><div><h1>Care for <em>every day.</em></h1><p>Six considered essentials. Build a routine that feels easy to return to.</p></div><span className="page-index">01 — 06</span></div><ShopClient initialCategory={params.category??""} initialSort={params.sort??""}/></main>}

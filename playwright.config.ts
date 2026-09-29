@@ -1,0 +1,2 @@
+import { defineConfig } from "@playwright/test";
+export default defineConfig({ testDir: "./tests/browser", fullyParallel: false, workers: 1, timeout: 45000, use: { baseURL: "http://127.0.0.1:3115", browserName: "chromium", channel: "chrome", trace: "retain-on-failure" }, reporter: [["list"], ["html", { open: "never" }]], webServer: { command: "npm run start -- -p 3115", url: "http://127.0.0.1:3115", reuseExistingServer: false, timeout: 60000, env: { NEXT_TELEMETRY_DISABLED: "1" } } });

@@ -1,0 +1,62 @@
+[
+  {
+    "engine": "edge",
+    "width": 375,
+    "passed": true
+  },
+  {
+    "engine": "edge",
+    "width": 390,
+    "passed": true
+  },
+  {
+    "engine": "edge",
+    "width": 430,
+    "passed": true
+  },
+  {
+    "engine": "edge",
+    "width": 768,
+    "passed": true
+  },
+  {
+    "engine": "edge",
+    "width": 1024,
+    "passed": true
+  },
+  {
+    "engine": "edge",
+    "width": 1440,
+    "passed": true
+  },
+  {
+    "engine": "android",
+    "width": 375,
+    "passed": true
+  },
+  {
+    "engine": "android",
+    "width": 390,
+    "passed": true
+  },
+  {
+    "engine": "android",
+    "width": 430,
+    "passed": true
+  },
+  {
+    "engine": "android",
+    "width": 768,
+    "passed": true
+  },
+  {
+    "engine": "android",
+    "width": 1024,
+    "passed": true
+  },
+  {
+    "engine": "android",
+    "width": 1440,
+    "passed": true
+  }
+]

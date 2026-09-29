@@ -1,0 +1,3 @@
+import type { Metadata } from "next"; import { RoutineBuilder } from "@/components/routine-builder";
+export const metadata:Metadata={title:"Find Your Routine",description:"Answer three simple cosmetic questions to explore a SOVA concept routine."};
+export default function Routine(){return <main id="main" className="inner-page routine-page"><div className="page-hero"><span className="eyebrow">SOVA / Your routine</span><div><h1>Care at <em>your pace.</em></h1><p>Three small questions. A thoughtful place to begin.</p></div><span className="page-index">GUIDED / 03</span></div><RoutineBuilder/></main>}

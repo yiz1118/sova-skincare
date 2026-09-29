@@ -1,0 +1,16 @@
+{
+  "backup": "C:\\Users\\alson\\AppData\\Local\\Temp\\sova-icon-before-cn64w6",
+  "files": [
+    "app/about/page.tsx",
+    "app/ingredients/page.tsx",
+    "app/page.tsx",
+    "app/philosophy/page.tsx",
+    "components/cart-client.tsx",
+    "components/newsletter.tsx",
+    "components/product-card.tsx",
+    "components/product-detail.tsx",
+    "components/routine-builder.tsx",
+    "components/site-header.tsx",
+    "app/globals.css"
+  ]
+}
