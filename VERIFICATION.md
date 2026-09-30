@@ -70,3 +70,28 @@ The shared footer now includes an independent concept label, creator credit, rol
 | Additional browser coverage | Edge and Android-emulated Chromium passed contact disclosure, SVG, target-height, and overflow checks at all six widths |
 
 Screenshots were visually inspected and saved as `artifacts/screenshots/creator-footer-390.png`, `creator-footer-open-390.png`, `creator-footer-1440.png`, and `creator-footer-open-1440.png`. `creator-browser-qa.json` records the additional Edge/Android-emulation runs. Contact destinations and prefilled parameters were checked without completing a real enquiry. Physical devices, Safari, actual mail delivery, and WhatsApp message delivery are outside the observed test evidence.
+
+## Motion polish — 2026-09-30
+
+The motion audit and implementation are documented in `MOTION-NOTES.md`. The visual system, content, navigation architecture, store CTAs, concept disclosure, and creator links remain intact. The added motion uses native CSS and IntersectionObserver; no animation package was installed.
+
+Selected additions include brief heading entrances, distinct texture fades and still-life image settling, product/ingredient staggers, a stable-frame gallery crossfade, a routine step fade with heading focus, transform-based routine progress and mobile menu motion, and small SVG/control feedback. Reveals are one-time, content stays visible without JavaScript or IntersectionObserver, and system preference changes cancel active motion. Content-group fades retain at least 90% opacity to keep body text readable during the transition.
+
+| Check | Result |
+| --- | --- |
+| `npm run lint` | Passed |
+| `npm run typecheck` | Passed |
+| `npm test` | Passed: 5 logic and creator tests |
+| `npm run build` | Passed: optimized production build and all 15 generated pages |
+| `npm run test:browser` | Passed: 33 Chrome tests against the production build |
+| `npm run test:motion` | Passed: 28 tests across Edge, Android-emulated Chromium, desktop WebKit, and iPhone-emulated WebKit. Four duplicate screenshot-capture cases are intentionally skipped; captures use Chrome. |
+| Responsive | All eight page types checked at 375, 390, 430, 768, 1024, and 1440 px in Chrome; the existing extra 360 px check also passes. No horizontal overflow. |
+| Accessibility | Existing eight-page mobile axe scan and creator-footer scans at all six requested widths report no WCAG 2 A/AA or 2.1 A/AA violations. Menu focus/Escape, routine heading focus, readable content, and reduced-motion preference changes pass. |
+| Runtime | All five browser configurations report no console errors or page exceptions while scrolling all eight page types. Gallery frame dimensions remain stable. |
+| Layout shifts | Chrome, Edge, and Android-emulated Chromium report zero post-load layout-shift entries during reveal scrolling. WebKit does not expose that metric in this environment; geometry and overflow checks pass there. This is not a whole-load CLS or Lighthouse score. |
+
+The first pass caught a reduced-motion hover specificity issue and low text contrast during a product-card fade. Both were corrected in the source before the final passing run. Visual review also led to a stationary routine heading and a fade-only question transition, so focus does not leave the heading cropped.
+
+`artifacts/motion/qa-results.json` exports the passing Playwright report statistics and per-page runtime checks. Settled Chrome screenshots were visually reviewed and saved as `home-desktop-1440.png`, `editorial-desktop-1440.png`, `ingredients-mobile-390.png`, and `routine-mobile-390.png` in the same folder. Existing historical screenshots were preserved.
+
+WebKit was available for this follow-up and successfully tested, improving on the earlier Safari-engine coverage limitation. WebKit on Windows and device emulation do not establish physical iPhone, Android, or macOS Safari behavior. No live deployment or Lighthouse score is asserted.

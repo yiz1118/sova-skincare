@@ -1,0 +1,286 @@
+{
+  "project": "SOVA",
+  "date": "2026-09-30",
+  "responsiveWidths": [
+    375,
+    390,
+    430,
+    768,
+    1024,
+    1440
+  ],
+  "layoutShiftScope": "Measured after initial fonts and visible images loaded, during reveal scrolling. null means the browser does not expose the metric.",
+  "deviceScope": "Desktop browsers and Android/iPhone emulation. No physical-device testing.",
+  "screenshotScope": "Captured once in Chrome; four duplicate cross-browser capture tests intentionally skipped.",
+  "runs": [
+    {
+      "report": "playwright-report/index.html",
+      "startedAt": 1790766761487,
+      "durationMs": 214397.269,
+      "projects": [
+        ""
+      ],
+      "stats": {
+        "total": 33,
+        "expected": 33,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 0,
+        "ok": true
+      },
+      "runtimeChecks": [
+        {
+          "browser": "chrome",
+          "errors": [],
+          "results": [
+            {
+              "route": "/",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/shop",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/products/soft-reset-gel-cleanser",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/routine",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/ingredients",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/philosophy",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/about",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/cart",
+              "shifts": 0,
+              "overflow": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "report": "playwright-report/motion/index.html",
+      "startedAt": 1790767130993,
+      "durationMs": 177256.61099999998,
+      "projects": [
+        "edge",
+        "android",
+        "webkit-desktop",
+        "iphone-webkit"
+      ],
+      "stats": {
+        "total": 32,
+        "expected": 28,
+        "unexpected": 0,
+        "flaky": 0,
+        "skipped": 4,
+        "ok": true
+      },
+      "runtimeChecks": [
+        {
+          "browser": "edge",
+          "errors": [],
+          "results": [
+            {
+              "route": "/",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/shop",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/products/soft-reset-gel-cleanser",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/routine",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/ingredients",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/philosophy",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/about",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/cart",
+              "shifts": 0,
+              "overflow": false
+            }
+          ]
+        },
+        {
+          "browser": "android",
+          "errors": [],
+          "results": [
+            {
+              "route": "/",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/shop",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/products/soft-reset-gel-cleanser",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/routine",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/ingredients",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/philosophy",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/about",
+              "shifts": 0,
+              "overflow": false
+            },
+            {
+              "route": "/cart",
+              "shifts": 0,
+              "overflow": false
+            }
+          ]
+        },
+        {
+          "browser": "webkit-desktop",
+          "errors": [],
+          "results": [
+            {
+              "route": "/",
+              "shifts": null,
+              "overflow": false
+            },
+            {
+              "route": "/shop",
+              "shifts": null,
+              "overflow": false
+            },
+            {
+              "route": "/products/soft-reset-gel-cleanser",
+              "shifts": null,
+              "overflow": false
+            },
+            {
+              "route": "/routine",
+              "shifts": null,
+              "overflow": false
+            },
+            {
+              "route": "/ingredients",
+              "shifts": null,
+              "overflow": false
+            },
+            {
+              "route": "/philosophy",
+              "shifts": null,
+              "overflow": false
+            },
+            {
+              "route": "/about",
+              "shifts": null,
+              "overflow": false
+            },
+            {
+              "route": "/cart",
+              "shifts": null,
+              "overflow": false
+            }
+          ]
+        },
+        {
+          "browser": "iphone-webkit",
+          "errors": [],
+          "results": [
+            {
+              "route": "/",
+              "shifts": null,
+              "overflow": false
+            },
+            {
+              "route": "/shop",
+              "shifts": null,
+              "overflow": false
+            },
+            {
+              "route": "/products/soft-reset-gel-cleanser",
+              "shifts": null,
+              "overflow": false
+            },
+            {
+              "route": "/routine",
+              "shifts": null,
+              "overflow": false
+            },
+            {
+              "route": "/ingredients",
+              "shifts": null,
+              "overflow": false
+            },
+            {
+              "route": "/philosophy",
+              "shifts": null,
+              "overflow": false
+            },
+            {
+              "route": "/about",
+              "shifts": null,
+              "overflow": false
+            },
+            {
+              "route": "/cart",
+              "shifts": null,
+              "overflow": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

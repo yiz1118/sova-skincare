@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
-    "test:browser": "playwright test"
+    "test:browser": "playwright test",
+    "test:motion": "playwright test --config=playwright.motion.config.ts"
   },
   "dependencies": {
     "@fontsource/dm-sans": "^5.2.8",
